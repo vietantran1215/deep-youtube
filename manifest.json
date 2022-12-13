@@ -1,0 +1,24 @@
+{
+  "name": "XTZ Youtube",
+  "version": "0.1.0",
+  "description": "Hiding video suggestions on Youtube",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://*.youtube.com/*"],
+  "action": {
+    "default_icon": {
+      "16": "assets/icons/not-hehe.png",
+      "24": "assets/icons/not-hehe.png",
+      "32": "assets/icons/not-hehe.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/*"],
+      "js": ["block-suggestions.js"]
+    }
+  ],
+  "manifest_version": 3
+}
