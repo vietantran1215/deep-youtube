@@ -12,7 +12,7 @@
     };
     const domCollections = Object.keys(selectors).map(key => document.querySelector(selectors[key]));
     if (domCollections.some(dom => dom === null)) {
-      retryDom()
+      setTimeout(() => retryDom(), 500);
     } else {
       domCollections.forEach(dom => dom.style.display = 'none');
     }
